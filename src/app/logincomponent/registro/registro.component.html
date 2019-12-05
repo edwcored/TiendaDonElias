@@ -1,0 +1,61 @@
+<div class="signin-content">
+    <div class="card">
+        <div style="background-color: silver;" class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div fxLayout="column  wrap" fxLayoutWrap fxLayoutAlign="lefth">
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="email" formControlName="user">
+                        <mat-placeholder class="placeholder">correo</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('user')">
+                            ingrese el correo
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="nombre">
+                        <mat-placeholder class="placeholder">nombre</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('nombre')">
+                            ingrese su nombre
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="direccion">
+                        <mat-placeholder class="placeholder">direccion</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('direccion')">
+                            ingrese su direccion
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="telefono">
+                        <mat-placeholder class="placeholder">telefono</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('telefono')">
+                            ingrese su telefono
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="password" formControlName="password">
+                        <mat-placeholder class="placeholder">Contraseña</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('password')">
+                            Ingrese su contraseña
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="password" formControlName="password2">
+                        <mat-placeholder class="placeholder">repita Contraseña</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('password2')">
+                            Reptia su contraseña
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button style="width: 150px;" mat-raised-button color="primary" type="submit">Guardar</button>
+
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
