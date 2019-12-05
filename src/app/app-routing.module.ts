@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'setearclave', component: CambarClaveAccionComponent, canActivate: [AuthGuard] },
 
   { path: 'home', component: HomeComponent },
-  { path: 'producto', component: ProductoComponent, canActivate: [AuthGuard] },
+  // { path: 'productos', component: ProductoComponent, canActivate: [AuthGuard] },
+  { path: 'productos', component: ProductoComponent},
   { path: 'compra', component: CompraComponent, canActivate: [AuthGuard] }
 ];
 

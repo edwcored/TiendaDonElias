@@ -1,6 +1,7 @@
 export const URLSPRODUCTOS = {
     GETN: 'http://localhost:301/api/productos/getn',
-    GET: 'http://localhost:301/api/productos/get'
+    GET: 'http://localhost:301/api/productos/get',
+    CREATE: 'http://localhost:301/api/productos/create'
 };
 
 export const DOMINIOVALOR = {

@@ -1,1 +1,53 @@
-<p>producto works!</p>
+<div class="signin-content">
+    <div class="card">
+        <div style="background-color: silver;" class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div fxLayout="column  wrap" fxLayoutWrap fxLayoutAlign="lefth">
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="sku">
+                        <mat-placeholder class="placeholder">SKU</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('sku')">
+                            ingrese el SKU
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="nombre">
+                        <mat-placeholder class="placeholder">nombre</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('nombre')">
+                            ingrese el nombre
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="miga">
+                        <mat-placeholder class="placeholder">miga</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('miga')">
+                            ingrese la miga
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="precio">
+                        <mat-placeholder class="placeholder">precio</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('precio')">
+                            precio
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="text" formControlName="iva">
+                        <mat-placeholder class="placeholder">iva</mat-placeholder>
+                        <mat-error *ngIf="isFieldInvalid('iva')">
+                            iva
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button style="width: 150px;" mat-raised-button color="primary" type="submit">Guardar</button>
+
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

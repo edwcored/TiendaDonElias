@@ -19,7 +19,13 @@ export class AppService {
     return this.http.post(URLSPRODUCTOS.GET, params).toPromise();
   }
 
+  async createProduct(params: any): Promise<any> {
+    return this.http.post(URLSPRODUCTOS.CREATE, params).toPromise();
+  }
+
   async getCategorias(): Promise<any> {
     return this.http.get(DOMINIOVALOR.CATEGORIAS).toPromise();
   }
+
+  
 }
