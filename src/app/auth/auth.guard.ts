@@ -17,22 +17,9 @@ export class AuthGuard implements CanActivate {
         const usr = localStorage.getItem(LOCALSTORESTR.LS_USER);
         if (usr === undefined || usr === null) {
           if (!isLoggedIn) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/']);
             return false;
           }
-        }
-
-        if (route.data && route.data.permission) {
-          /*if (!this.authService.validarPermiso(route.data['permission'])) {
-            this.authService.mostrarMensaje('No tiene permiso para navegar esta pagina', 'ERROR');
-            this.router.navigate(['/dashboard']);
-            return false;
-          }*/
-        }
-
-        // paginas sin header
-        if (route.url[0] && route.url[0].path !== 'selectorempresa') {
-          this.authService.logged(true);
         }
         return true;
       })

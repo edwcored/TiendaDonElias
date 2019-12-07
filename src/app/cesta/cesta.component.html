@@ -1,0 +1,43 @@
+<div class="container">
+    <br>
+    <div class="container">
+        <h4 class="text-primary text-center">PRODUCTOS EN EL CARRITO</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-primary" scope="col"><small>#</small></th>
+                    <th class="text-primary" scope="col"><small>Producto</small></th>
+                    <th class="text-primary" scope="col"><small>Precio</small></th>
+                    <th class="text-primary" scope="col"><small>Cantidad</small></th>
+                    <th class="text-primary" scope="col"><small>Iva</small></th>
+                    <th class="text-primary" scope="col"><small>Total</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let line of productos; index as i">
+                    <td class="" scope="row">{{i}}</td>
+                    <td scope="row"><small>{{line.nombre}}</small></td>
+                    <td scope="row"><small>{{line.precio}}</small></td>
+                    <td scope="row"><small>{{line.cant}}</small></td>
+                    <td scope="row"><small>{{line.vrIva}}</small></td>
+                    <td scope="row"><small>{{line.total }}</small></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{sumaIva}}</td>
+                    <td>{{sumaTotal}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="container">
+        <button mat-button style="width: 150px;" (click)="Comprar()">Realizar Compra</button>
+    </div>
+</div>

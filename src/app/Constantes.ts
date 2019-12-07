@@ -1,17 +1,18 @@
 export const URLSPRODUCTOS = {
     GETN: 'http://localhost:301/api/productos/getn',
     GET: 'http://localhost:301/api/productos/get',
-    CREATE: 'http://localhost:301/api/productos/create'
-};
-
-export const DOMINIOVALOR = {
-    CATEGORIAS: 'http://localhost:301/api/productos/categorias',
-    GET: 'http://localhost:301/api/productos/get'
+    CREATE: 'http://localhost:301/api/productos/create',
+    CATEGORIAS: 'http://localhost:301/api/productos/categorias'
 };
 
 export const URLCESTA = {
     ADD: 'http://localhost:301/api/cesta/add',
-    GET: 'http://localhost:301/api/productos/get'
+    FINISH: 'http://localhost:301/api/cesta/finish',
+    GET: 'http://localhost:301/api/cesta/get'
+};
+
+export const URLCOMPRAS = {
+    GET: 'http://localhost:301/api/compras/get'
 };
 
 export const LOCALSTORESTR = {

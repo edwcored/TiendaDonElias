@@ -5,9 +5,9 @@ import {
   HttpEvent,
   HttpInterceptor, HttpResponse
 } from '@angular/common/http';
-import { URLPERSONA, RESULTS, MENSAJES, REALIZARCAMBIOCLAVELOCAL } from './Constantes';
+import { URLPERSONA, RESULTS, MENSAJES, REALIZARCAMBIOCLAVELOCAL, URLCOMPRAS, URLCESTA } from './Constantes';
 import { map, finalize } from 'rxjs/operators';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth/auth.service';
 import { BusyService } from './busy.service';
 
@@ -18,9 +18,9 @@ import { BusyService } from './busy.service';
 export class MyHttpInterceptor implements HttpInterceptor {
   private urlsConToken = [
     URLPERSONA.VALIDARUSUARIOURL,
-    URLPERSONA.SOLICITARCAMBIOCLAVE,
     REALIZARCAMBIOCLAVELOCAL,
-    URLPERSONA.GETTOKEN
+    URLCOMPRAS.GET,
+    URLCESTA.FINISH
   ];
 
   constructor(

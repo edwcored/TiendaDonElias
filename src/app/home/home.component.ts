@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
       cant: this.cantidades[index]
     };
 
-    const res = await this.appService.addToCart(data);
+    const res = await this.appService.addToCar(data);
     if (res.resultCode === RESULTS.OK) {
       this.authService.mostrarMensaje('Producto Agregado a la sesta', MENSAJES.SUSSES);
     } else if (res.resultCode === RESULTS.REPITED) {

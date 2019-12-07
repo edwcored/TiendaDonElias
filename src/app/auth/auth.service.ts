@@ -32,7 +32,6 @@ export class AuthService {
 
   constructor(
     private router: Router,
-    private http: HttpClient,
     private toastr: ToastrService
   ) { }
 
@@ -48,11 +47,7 @@ export class AuthService {
     localStorage.clear();
 
     this.loggedIn.next(false);
-    this.router.navigate(['/login']);
-  }
-
-  validarPermiso(codigos: number[]): boolean {
-    return true;
+    this.router.navigate(['/home']);
   }
 
   mostrarMensaje(mensaje: string, tipo: number): void {
@@ -64,15 +59,4 @@ export class AuthService {
       this.toastr.warning(mensaje);
     }
   }
-
-  async getToken(): Promise<any> {
-    const data = {
-      nui: this.usuario.nui,
-      nuiemp: this.usuario.emp.nui,
-      rol: this.usuario.emp.rol,
-      pwd: this.usuario.currentPassword
-    };
-    return await this.http.post(URLPERSONA.GETTOKEN, data).toPromise();
-  }
-
 }

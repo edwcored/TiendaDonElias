@@ -31,6 +31,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
+import { CestaComponent } from './cesta/cesta.component';
+import { ComprasComponent } from './compras/compras.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 @NgModule({
@@ -42,7 +45,9 @@ import { ToastrModule } from 'ngx-toastr';
     RegistroComponent,
     ProductoComponent,
     CompraComponent,
-    HomeComponent
+    HomeComponent,
+    CestaComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,7 @@ import { ToastrModule } from 'ngx-toastr';
     { provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor, multi: true },
     AppService,
     AuthService,
+    AuthGuard,
     BusyService
   ],
   bootstrap: [AppComponent]

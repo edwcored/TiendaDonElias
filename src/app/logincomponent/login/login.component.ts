@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   private formSubmitAttempt: boolean;
+  finalizando: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -25,6 +26,12 @@ export class LoginComponent implements OnInit {
       user: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    if (localStorage.getItem('finalizando')) {
+      this.finalizando = true;
+    } else {
+      this.finalizando = false;
+    }
   }
 
   isFieldInvalid(field: string) {
@@ -46,7 +53,12 @@ export class LoginComponent implements OnInit {
               res.data.currentPassword = this.form.value.password;
               this.authService.usuario = res.data;
               this.authService.loggedIn.next(true);
-              this.router.navigate(['/home']);
+              if (this.finalizando) {
+                localStorage.setItem('finalizando', '1');
+                this.router.navigate(['/compras']);
+              } else {
+                this.router.navigate(['/home']);
+              }
             } else if (res.resultCode === RESULTS.PASSWORDINVALID) {
               this.authService.mostrarMensaje('Constraseña invalida', MENSAJES.ERROR);
             } else if (res.resultCode === RESULTS.USERINVALID) {
