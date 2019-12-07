@@ -5,7 +5,12 @@ export const URLSPRODUCTOS = {
 };
 
 export const DOMINIOVALOR = {
-    CATEGORIAS: 'http://localhost:301/api/productos/getn',
+    CATEGORIAS: 'http://localhost:301/api/productos/categorias',
+    GET: 'http://localhost:301/api/productos/get'
+};
+
+export const URLCESTA = {
+    ADD: 'http://localhost:301/api/cesta/add',
     GET: 'http://localhost:301/api/productos/get'
 };
 

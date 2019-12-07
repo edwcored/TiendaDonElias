@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { URLSPRODUCTOS, DOMINIOVALOR } from './Constantes';
+import { URLSPRODUCTOS, DOMINIOVALOR, URLCESTA } from './Constantes';
 import { Observable } from 'rxjs';
 import { Producto } from './models/productos.model';
 
@@ -23,9 +23,13 @@ export class AppService {
     return this.http.post(URLSPRODUCTOS.CREATE, params).toPromise();
   }
 
-  async getCategorias(): Promise<any> {
-    return this.http.get(DOMINIOVALOR.CATEGORIAS).toPromise();
+  async getCategorias(params: any): Promise<any> {
+    return this.http.post(DOMINIOVALOR.CATEGORIAS, params).toPromise();
   }
 
-  
+  async addToCart(params: any): Promise<any> {
+    return this.http.post(URLCESTA.ADD, params).toPromise();
+  }
+
+
 }

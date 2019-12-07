@@ -25,6 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -56,6 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatIconModule,
     MatCheckboxModule,
     MatInputModule,
+    MatSelectModule,
     FlexLayoutModule,
     ToastrModule.forRoot()
   ],
