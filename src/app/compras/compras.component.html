@@ -32,6 +32,11 @@
         <p>Subtotal: {{detalle.subtotal}}</p>
         <p>IVA: {{detalle.iva}}</p>
         <p>Total: {{detalle.total}}</p>
+        <span *ngIf="detalle.cupon">
+            <p>Cupon aplicado:{{detalle.cupon.cupon}}</p>
+            <p>% Cupon:{{detalle.cupon.valor}}</p>
+            <p>Valor Cupon:{{detalle.total - (detalle.total * detalle.cupon.valor / 100)}}</p> 
+        </span>
 
         <table class="table">
             <thead>

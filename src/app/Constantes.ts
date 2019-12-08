@@ -8,7 +8,8 @@ export const URLSPRODUCTOS = {
 export const URLCESTA = {
     ADD: 'http://localhost:301/api/cesta/add',
     FINISH: 'http://localhost:301/api/cesta/finish',
-    GET: 'http://localhost:301/api/cesta/get'
+    GET: 'http://localhost:301/api/cesta/get',
+    VALIDARCUPON: 'http://localhost:301/api/cesta/validarcupon'
 };
 
 export const URLCOMPRAS = {

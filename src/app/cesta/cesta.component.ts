@@ -13,6 +13,9 @@ export class CestaComponent implements OnInit {
   productos = [];
   sumaTotal = 0;
   sumaIva = 0;
+  cupon = '';
+  datosCupon: number;
+  buscoCupon = false;
 
   constructor(private appService: AppService, private authService: AuthService, private router: Router) { }
 
@@ -43,4 +46,17 @@ export class CestaComponent implements OnInit {
     }
   }
 
+  async validarCupon() {
+    this.buscoCupon = true;
+    if (this.cupon) {
+      try {
+        const res = await this.appService.validarCupon({ cupon: this.cupon });
+        if (res.resultCode === RESULTS.OK) {
+          this.datosCupon = res.data;
+        }
+      } catch (e) {
+        this.authService.mostrarMensaje('Respuesta invalida del servidor', MENSAJES.ERROR);
+      }
+    }
+  }
 }

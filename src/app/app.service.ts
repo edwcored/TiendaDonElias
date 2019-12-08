@@ -45,4 +45,8 @@ export class AppService {
     return this.http.post(URLCOMPRAS.GET, {}).toPromise();
   }
 
+  async validarCupon(params: any): Promise<any> {
+    // se usa un post para q no se cachee en pwa
+    return this.http.post(URLCESTA.VALIDARCUPON, params).toPromise();
+  }
 }

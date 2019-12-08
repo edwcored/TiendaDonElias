@@ -6,7 +6,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="text-primary" scope="col"><small>#</small></th>
                     <th class="text-primary" scope="col"><small>Producto</small></th>
                     <th class="text-primary" scope="col"><small>Precio</small></th>
                     <th class="text-primary" scope="col"><small>Cantidad</small></th>
@@ -16,7 +15,6 @@
             </thead>
             <tbody>
                 <tr *ngFor="let line of productos; index as i">
-                    <td class="" scope="row">{{i}}</td>
                     <td scope="row"><small>{{line.nombre}}</small></td>
                     <td scope="row"><small>{{line.precio}}</small></td>
                     <td scope="row"><small>{{line.cant}}</small></td>
@@ -29,7 +27,6 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td>{{sumaIva}}</td>
                     <td>{{sumaTotal}}</td>
                 </tr>
@@ -38,6 +35,21 @@
     </div>
 
     <div class="container">
+        <div class="card">
+            Ingrese el codigo de cupon
+            <input matInput type="text" style="width: 200px;" [(ngModel)]="cupon">
+            <button mat-button style="width: 150px;" (click)="validarCupon()">Aplicar cupon</button>
+            <span *ngIf="datosCupon">
+                % descuento: {{datosCupon.valor}}%
+            </span>
+            <span *ngIf="datosCupon">
+                $ descuento: {{sumaTotal * datosCupon.valor / 100}}
+            </span>
+            <span *ngIf="buscoCupon && !datosCupon">
+                cupon invalido
+            </span>
+        </div>
+        <br>
         <button mat-button style="width: 150px;" (click)="Comprar()">Realizar Compra</button>
     </div>
 </div>
