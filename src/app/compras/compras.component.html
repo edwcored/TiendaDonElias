@@ -1,1 +1,59 @@
-<p>compras works!</p>
+<div class="container">
+    <br>
+    <div *ngIf="!verDetalle" class="container">
+        <h4 class="text-primary text-center">COMPRAS REALIZADAS</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-primary" scope="col"><small>#</small></th>
+                    <th class="text-primary" scope="col"><small>Fecha</small></th>
+                    <th class="text-primary" scope="col"><small>subtotal</small></th>
+                    <th class="text-primary" scope="col"><small>iva</small></th>
+                    <th class="text-primary" scope="col"><small>total</small></th>
+                    <th class="text-primary" scope="col"><small>Ver</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let line of compras; index as i">
+                    <td class="" scope="row">{{i}}</td>
+                    <td scope="row"><small>{{line.fecha | date:'dd/MM/yyyy'}}</small></td>
+                    <td scope="row"><small>{{line.subtotal}}</small></td>
+                    <td scope="row"><small>{{line.iva}}</small></td>
+                    <td scope="row"><small>{{line.total}}</small></td>
+                    <td scope="row"><button mat-button style="width: 50px;" (click)="ver(line._id)">VER</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="verDetalle">
+        <p>Fecha: {{detalle.fecha | date:'dd/MM/yyyy'}}</p>
+        <p>Subtotal: {{detalle.subtotal}}</p>
+        <p>IVA: {{detalle.iva}}</p>
+        <p>Total: {{detalle.total}}</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-primary" scope="col"><small>Nombre</small></th>
+                    <th class="text-primary" scope="col"><small>Cant</small></th>
+                    <th class="text-primary" scope="col"><small>Precio</small></th>
+                    <th class="text-primary" scope="col"><small>Iva</small></th>
+                    <th class="text-primary" scope="col"><small>total</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let line of detalle.productos; index as i">
+                    <td scope="row"><small>{{line.nombre}}</small></td>
+                    <td scope="row"><small>{{line.cant}}</small></td>
+                    <td scope="row"><small>{{line.precio}}</small></td>
+                    <td scope="row"><small>{{line.vrIva}}</small></td>
+                    <td scope="row"><small>{{line.total}}</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button mat-button style="width: 100px;" (click)="volver()">Volver</button>
+    </div>
+</div>

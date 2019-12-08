@@ -9,6 +9,8 @@ import { RESULTS } from '../Constantes';
 })
 export class ComprasComponent implements OnInit {
   compras = [];
+  verDetalle = false;
+  detalle = {};
 
   constructor(private appService: AppService) { }
 
@@ -24,7 +26,16 @@ export class ComprasComponent implements OnInit {
   }
 
   async finalizarCompra() {
-    const res = await this.appService.finishCar();
+    localStorage.removeItem('finalizando');
+    await this.appService.finishCar();
   }
 
+  ver(id) {
+    this.detalle = this.compras.find(x => x._id === id);
+    this.verDetalle = true;
+  }
+
+  volver() {
+    this.verDetalle = false;
+  }
 }

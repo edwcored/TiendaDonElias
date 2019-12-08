@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { RegistroComponent } from './logincomponent/registro/registro.component';
 import { ProductoComponent } from './producto/producto.component';
-import { CompraComponent } from './compra/compra.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,7 +43,6 @@ import { AuthGuard } from './auth/auth.guard';
     CambarClaveAccionComponent,
     RegistroComponent,
     ProductoComponent,
-    CompraComponent,
     HomeComponent,
     CestaComponent,
     ComprasComponent
