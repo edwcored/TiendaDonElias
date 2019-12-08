@@ -16,8 +16,6 @@ import { AuthService } from './auth/auth.service';
 import { BusyService } from './busy.service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginComponent } from './logincomponent/login/login.component';
-import { CambarClaveSolicitudComponent } from './logincomponent/cambar-clave-solicitud/cambar-clave-solicitud.component';
-import { CambarClaveAccionComponent } from './logincomponent/cambar-clave-accion/cambar-clave-accion.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -39,8 +37,6 @@ import { AuthGuard } from './auth/auth.guard';
   declarations: [
     AppComponent,
     LoginComponent,
-    CambarClaveSolicitudComponent,
-    CambarClaveAccionComponent,
     RegistroComponent,
     ProductoComponent,
     HomeComponent,
