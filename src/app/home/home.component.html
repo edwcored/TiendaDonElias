@@ -1,46 +1,46 @@
 <div class="container h-100">
-  <br>
-  <div class="card border p-2">
-    CATEGORIA
-    <div fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px">
-      <div *ngFor="let categoria of Categorias; let indice=index">
-        <mat-select style="width: 200px;" [(value)]="CategoriasSeleccionadas[indice]"
-          (selectionChange)="selectCat(indice)">
-          <mat-option *ngFor="let cat of categoria" [value]="cat">
-            {{cat}}
-          </mat-option>
-        </mat-select>
-      </div>
-    </div>
-  </div>
-  <br>
-
-  <div class="card border p-2" fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px" fxLayoutAlign=" center">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nombre" [(ngModel)]="filtro.nombre">
-    </mat-form-field>
-    <div>
-      <button mat-button style="width: 150px;" (click)="Buscar()">Buscar</button>
-    </div>
-  </div>
-  <br>
-  
-  <div class="container border" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
-    <h4 style="text-align: center">PRODUCTOS ENCONTRADOS</h4>
-
-    <div fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px">
-      <div class="card border p-2 m-2" style="width: 300px;" *ngFor="let line of linesToWrite; index as i">
-        <h5>{{line.nombre}}</h5>
-        <p>{{line.descripcion}}</p>
-        <p>Precio: {{line.precio | currency}}</p>
-        <p>Clasificación: {{line.miga}}</p>
-        <div>
-          <input type="number" style="width: 50px;" min="1" value="1" [(ngModel)]="cantidades[line._id]">
-          <button mat-button (click)="Agregar(line._id)">Agregar</button>
+    <br>
+    <div class="card border p-2">
+        CATEGORIA
+        <div fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px">
+            <div *ngFor="let categoria of Categorias; let indice=index">
+                <mat-select style="width: 200px;" [(value)]="CategoriasSeleccionadas[indice]" (selectionChange)="selectCat(indice)">
+                    <mat-option *ngFor="let cat of categoria" [value]="cat">
+                        {{cat}}
+                    </mat-option>
+                </mat-select>
+            </div>
         </div>
-      </div>
-      <br>
+    </div>
+    <br>
+
+    <div class="card border p-2" fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px" fxLayoutAlign=" center">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nombre" [(ngModel)]="filtro.nombre">
+        </mat-form-field>
+        <div>
+            <button mat-button style="width: 150px;" (click)="Buscar()">Buscar</button>
+        </div>
+    </div>
+    <br>
+
+    <div class="container border" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+        <h4 style="text-align: center">PRODUCTOS ENCONTRADOS</h4>
+
+        <div fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px">
+            <div class="card border p-2 m-2" style="width: 300px;" *ngFor="let line of linesToWrite; index as i">
+                <h5>{{line.nombre}}</h5>
+                <p>{{line.descripcion}}</p>
+                <p>Precio: {{line.precio | currency}}</p>
+                <p>Clasificación: {{line.miga}}</p>
+                <div>
+                    <input type="number" style="width: 50px;" min="1" value="1" [(ngModel)]="cantidades[line._id]">
+                    <button mat-button (click)="Agregar(line._id)">Agregar</button>
+                </div>
+            </div>
+            <br>
+        </div>
     </div>
 
-  </div>
+    <img src="../../assets/promocionanuncio.gif" width="200" />
 </div>
